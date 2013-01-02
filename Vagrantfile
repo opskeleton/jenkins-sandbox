@@ -9,6 +9,7 @@ Vagrant::Config.run do |config|
     jenkins.vm.customize ['modifyvm', :id, '--memory', 2048, '--cpus', 4]
     jenkins.vm.host_name = 'jenkins'
     jenkins.vm.provision :puppet, :options => ["--modulepath=/vagrant/modules:/vagrant/static-modules"]
+    jenkins.vm.network :hostonly, "192.168.1.15"
   end
 
 end
