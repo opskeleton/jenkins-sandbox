@@ -15,8 +15,18 @@ GIT
   specs:
     editfile (0.0.1)
 
+GIT
+  remote: git://github.com/narkisr/puppet-jdk.git
+  ref: master
+  sha: 0a9aadd8aa3fec297088c9ebb592d6da61850833
+  specs:
+    jdk (0.0.1)
+      puppetlabs/apt (>= 0.0.3)
+      puppetlabs/stdlib (>= 2.0.0)
+
 DEPENDENCIES
   editfile (>= 0)
+  jdk (>= 0)
   puppetlabs/apt (>= 0)
   puppetlabs/stdlib (>= 0)
   rtyler/jenkins (>= 0)
