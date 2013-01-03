@@ -9,11 +9,25 @@ FORGE
       puppetlabs/stdlib (>= 2.0.0)
 
 GIT
+  remote: git://github.com/camptocamp/puppet-archive.git
+  ref: master
+  sha: 8c0cb72ba392953fd2002b3d164377466cd2705f
+  specs:
+    archive (0.0.1)
+
+GIT
   remote: git://github.com/mstrauss/puppet-editfile.git
   ref: master
   sha: 884efdc0997af667f24625e696630e6b1db5a952
   specs:
     editfile (0.0.1)
+
+GIT
+  remote: git://github.com/narkisr/puppet-build.git
+  ref: master
+  sha: 922b9ae77c0f59c99af466209e2dfe1b710075ae
+  specs:
+    build (0.0.1)
 
 GIT
   remote: git://github.com/narkisr/puppet-jdk.git
@@ -25,6 +39,8 @@ GIT
       puppetlabs/stdlib (>= 2.0.0)
 
 DEPENDENCIES
+  archive (>= 0)
+  build (>= 0)
   editfile (>= 0)
   jdk (>= 0)
   puppetlabs/apt (>= 0)

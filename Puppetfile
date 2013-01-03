@@ -11,3 +11,9 @@ mod 'rtyler/jenkins'
 
 mod 'jdk', 
    :git => 'git://github.com/narkisr/puppet-jdk.git'
+
+mod 'build', 
+   :git => 'git://github.com/narkisr/puppet-build.git'
+
+mod 'archive',
+    :git => 'git://github.com/camptocamp/puppet-archive.git'

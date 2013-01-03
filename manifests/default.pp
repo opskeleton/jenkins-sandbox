@@ -11,4 +11,5 @@ node jenkins {
     ensure  => present
   }
   include jdk
+  include build::gradle
 }
