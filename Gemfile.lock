@@ -19,6 +19,8 @@ GEM
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.2.2)
+    opskeleton (0.4.2)
+      thor
     puppet (3.3.2)
       facter (~> 1.6)
       hiera (~> 1.0)
@@ -42,6 +44,7 @@ PLATFORMS
 
 DEPENDENCIES
   librarian-puppet
+  opskeleton
   puppet
   puppet-lint
   rake
