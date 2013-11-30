@@ -1,15 +1,25 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-Vagrant::Config.run do |config|
+Vagrant.configure("2") do |config|
+
+  env  = ENV['PUPPET_ENV'] 
+  env ||= 'dev'
 
   config.vm.define :jenkins do |jenkins|
-    jenkins.vm.box = 'ubuntu-12.10'
-    jenkins.vm.network :bridged
-    jenkins.vm.customize ['modifyvm', :id, '--memory', 2048, '--cpus', 4]
-    jenkins.vm.host_name = 'jenkins'
-    jenkins.vm.provision :puppet, :options => ["--modulepath=/vagrant/modules:/vagrant/static-modules"]
-    jenkins.vm.network :hostonly, "192.168.1.15"
+    jenkins.vm.box = 'ubuntu-13.04_puppet-3.3.1'
+    jenkins.vm.network :public_network,  { bridge: 'eth0' }
+    jenkins.vm.hostname = 'jenkins'
+    jenkins.vm.provider :virtualbox do |vb|
+      vb.customize ['modifyvm', :id, '--memory', 2048, '--cpus', 2]
+    end
+
+    jenkins.vm.provision :puppet do |puppet|
+      puppet.manifests_path = 'manifests'
+      puppet.manifest_file  = 'default.pp'
+      puppet.options = "--modulepath=/vagrant/modules:/vagrant/static-modules --hiera_config /vagrant/hiera_vagrant.yaml --environment=#{env}"
+    end
+
   end
 
 end
