@@ -1,19 +1,30 @@
 FORGE
   remote: http://forge.puppetlabs.com
   specs:
-    puppetlabs/apt (1.1.0)
+    darin/zypprepo (1.0.1)
+    puppetlabs/apt (1.4.0)
       puppetlabs/stdlib (>= 2.2.1)
-    puppetlabs/stdlib (3.2.0)
-    rtyler/jenkins (0.2.3)
-      puppetlabs/apt (>= 0.0.1)
-      puppetlabs/stdlib (>= 2.0.0)
+    puppetlabs/java (1.0.1)
+      puppetlabs/stdlib (>= 0.1.6)
+    puppetlabs/stdlib (4.1.0)
 
 GIT
   remote: git://github.com/camptocamp/puppet-archive.git
   ref: master
-  sha: 8c0cb72ba392953fd2002b3d164377466cd2705f
+  sha: 3d37b476685c94a45d771466b473a220b8b9d3b4
   specs:
     archive (0.0.1)
+
+GIT
+  remote: git://github.com/jenkinsci/puppet-jenkins.git
+  ref: master
+  sha: 8b3f026e731406f7488d36bf7ae9307cdf11a53f
+  specs:
+    jenkins (0.3.0)
+      darin/zypprepo (>= 1.0.1)
+      puppetlabs/apt (>= 0.0.3)
+      puppetlabs/java (>= 1.0.1)
+      puppetlabs/stdlib (>= 2.0.0)
 
 GIT
   remote: git://github.com/mstrauss/puppet-editfile.git
@@ -25,14 +36,14 @@ GIT
 GIT
   remote: git://github.com/narkisr/puppet-build.git
   ref: master
-  sha: 922b9ae77c0f59c99af466209e2dfe1b710075ae
+  sha: 17fa55633007f879dfe9c6c6796a9d9654cf101a
   specs:
-    build (0.0.1)
+    build (0.1.0)
 
 GIT
   remote: git://github.com/narkisr/puppet-jdk.git
   ref: master
-  sha: 0a9aadd8aa3fec297088c9ebb592d6da61850833
+  sha: e97207a098264a871badd2102586cb52025c2ec4
   specs:
     jdk (0.0.1)
       puppetlabs/apt (>= 0.0.3)
@@ -43,7 +54,7 @@ DEPENDENCIES
   build (>= 0)
   editfile (>= 0)
   jdk (>= 0)
+  jenkins (>= 0)
   puppetlabs/apt (>= 0)
   puppetlabs/stdlib (>= 0)
-  rtyler/jenkins (>= 0)
 
