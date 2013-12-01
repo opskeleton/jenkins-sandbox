@@ -2,8 +2,13 @@ GEM
   remote: https://rubygems.org/
   specs:
     archive-tar-minitar (0.5.2)
+    bintray_deploy (0.0.2)
+      configuration
+      rest-client
+      thor
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
+    configuration (1.3.2)
     erubis (2.7.0)
     facter (1.7.3)
     ffi (1.9.3)
@@ -16,10 +21,12 @@ GEM
       json
       thor (~> 0.15)
     log4r (1.1.10)
+    mime-types (2.0)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.2.2)
-    opskeleton (0.4.2)
+    opskeleton (0.4.3)
+      bintray_deploy
       thor
     puppet (3.3.2)
       facter (~> 1.6)
@@ -27,6 +34,8 @@ GEM
       rgen (~> 0.6.5)
     puppet-lint (0.3.2)
     rake (10.1.0)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rgen (0.6.6)
     thor (0.18.1)
     vagrant (1.0.7)
