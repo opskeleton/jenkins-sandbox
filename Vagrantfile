@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
   env ||= 'dev'
 
   config.vm.define :jenkins do |jenkins|
-    jenkins.vm.box = 'ubuntu-13.04_puppet-3.3.1'
+    jenkins.vm.box = 'ubuntu-13.10_puppet-3.4.0'
     jenkins.vm.network :public_network,  { bridge: 'eth0' }
     jenkins.vm.hostname = 'jenkins'
     jenkins.vm.provider :virtualbox do |vb|
