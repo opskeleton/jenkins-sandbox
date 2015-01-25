@@ -2,25 +2,25 @@ FORGE
   remote: https://forgeapi.puppetlabs.com
   specs:
     darin-zypprepo (1.0.2)
-    puppetlabs-apt (1.4.0)
+    puppetlabs-apt (1.7.0)
       puppetlabs-stdlib (>= 2.2.1)
     puppetlabs-java (1.3.0)
       puppetlabs-stdlib (>= 2.4.0)
-    puppetlabs-stdlib (4.1.0)
+    puppetlabs-stdlib (4.5.1)
 
 GIT
   remote: git://github.com/camptocamp/puppet-archive.git
   ref: master
-  sha: 3d37b476685c94a45d771466b473a220b8b9d3b4
+  sha: 354f01b00f79d456443871d354f9cb0969fd7ab7
   specs:
-    camptocamp-archive (0.0.1)
+    camptocamp-archive (0.3.6)
 
 GIT
   remote: git://github.com/jenkinsci/puppet-jenkins.git
   ref: master
-  sha: 8b3f026e731406f7488d36bf7ae9307cdf11a53f
+  sha: 470b9d6c7ec34914027ddff010edc076fc04bd86
   specs:
-    jenkinsci-jenkins (0.3.0)
+    jenkinsci-jenkins (1.3.0)
       darin-zypprepo (>= 1.0.1)
       puppetlabs-apt (>= 0.0.3)
       puppetlabs-java (>= 1.0.1)
@@ -36,7 +36,7 @@ GIT
 GIT
   remote: git://github.com/pulling-strings/puppet-build.git
   ref: master
-  sha: 852fd55dc33c377fbd5f568d0dff4885a33fb2b7
+  sha: 61a01db4f1e8ee494a2519d21ece5c66893ad62e
   specs:
     strings-build (0.1.0)
 
