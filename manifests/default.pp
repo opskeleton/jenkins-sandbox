@@ -1,8 +1,7 @@
 group{ 'puppet': ensure  => present }
 
-node jenkins {
+node 'jenkins.local' {
   include jenkins
-  class{'jenkins':}
   jenkins::plugin {'git' : version => '1.1.26' }
   jenkins::plugin {'mercurial' : version => '1.42' }
   jenkins::plugin {'gradle' : version => '1.21' }

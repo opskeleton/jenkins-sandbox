@@ -1,0 +1,10 @@
+---
+:backends:
+ - yaml
+ - module_data
+:logger: console
+:hierarchy:  
+ - '%{::virtual}'
+ - common
+:yaml:
+   :datadir: /vagrant/hieradata

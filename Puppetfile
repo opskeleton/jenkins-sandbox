@@ -1,4 +1,4 @@
-forge "http://forge.puppetlabs.com"
+forge 'https://forgeapi.puppetlabs.com'
 
 mod 'puppetlabs/stdlib'
 
@@ -7,14 +7,14 @@ mod 'puppetlabs/apt'
 mod 'editfile', 
    :git => 'git://github.com/mstrauss/puppet-editfile.git'
 
-mod 'jenkins', 
+mod 'jenkinsci/jenkins', 
    :git => 'git://github.com/jenkinsci/puppet-jenkins.git'
 
-mod 'jdk', 
-   :git => 'git://github.com/narkisr/puppet-jdk.git'
+mod 'strings/jdk', 
+   :git => 'git://github.com/pulling-strings/puppet-jdk.git'
 
-mod 'build', 
-   :git => 'git://github.com/narkisr/puppet-build.git'
+mod 'strings/build', 
+   :git => 'git://github.com/pulling-strings/puppet-build.git'
 
-mod 'archive',
+mod 'camptocamp/archive',
     :git => 'git://github.com/camptocamp/puppet-archive.git'
