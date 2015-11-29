@@ -2,8 +2,8 @@ require 'serverspec'
 require 'pathname'
 require 'net/ssh'
 
-include SpecInfra::Helper::Ssh
-include SpecInfra::Helper::DetectOS
+
+set :backend, :ssh
 
 def run(cmd)
   unless(system(cmd, out: $stdout, err: :out))
@@ -19,7 +19,7 @@ RSpec.configure do |c|
     c.ssh.close if c.ssh
     options = Net::SSH::Config.for(c.host)
     if(!ENV['LOCAL'])
-	run("vagrant destroy #{c.host} -f")
+	run("vagrant destroy #{c.host} -f") unless ENV['SKIP_DESTROY']
       
 	run("vagrant up #{c.host}")
       config = `vagrant ssh-config #{c.host}`
@@ -29,7 +29,7 @@ RSpec.configure do |c|
           if match = /HostName (.*)/.match(line)
             sshhost = match[1]
           elsif  match = /User (.*)/.match(line)
-            sshuser = match[1]
+            options[:user] = match[1]
           elsif match = /IdentityFile (.*)/.match(line)
             options[:keys] =  [match[1].gsub(/"/,'')]
           elsif match = /Port (.*)/.match(line)
@@ -39,14 +39,15 @@ RSpec.configure do |c|
       end
     else
       sshhost = 'localhost' 
-      sshuser = 'vagrant' 
+	options[:user] = 'vagrant'
     end
-    c.ssh = Net::SSH.start(sshhost, sshuser, options)
+    set :host, sshhost
+    set :ssh_options,options
   end
 
   c.after :suite do
     c.host  = ENV['TARGET_HOST']
     
-    run("vagrant destroy #{c.host} -f")
+    run("vagrant destroy #{c.host} -f") unless ENV['SKIP_DESTROY']
   end
 end
