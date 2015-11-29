@@ -4,7 +4,7 @@ mod 'puppetlabs/stdlib'
 
 mod 'puppetlabs/apt'
 
-mod 'editfile', 
+mod 'mstrauss/editfile', 
    :git => 'git://github.com/mstrauss/puppet-editfile.git'
 
 mod 'jenkinsci/jenkins', 
@@ -18,3 +18,6 @@ mod 'strings/build',
 
 mod 'camptocamp/archive',
     :git => 'git://github.com/camptocamp/puppet-archive.git'
+
+mod 'rip/module-data',
+    :git => 'git://github.com/ripienaar/puppet-module-data.git'
