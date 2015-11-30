@@ -31,7 +31,8 @@ Vagrant.configure("2") do |config|
       domain.host = 'jenkins.local'
       domain.memory = 2048
       domain.cpus = 2
-      o.vm.synced_folder './', '/vagrant', type: '9p'
+      o.vm.synced_folder './', '/vagrant', type: '9p', disabled: false, accessmode: "squash"
+
     end
 
     node.vm.provision :shell, :inline => update
