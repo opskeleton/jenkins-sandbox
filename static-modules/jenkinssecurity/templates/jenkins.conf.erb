@@ -1,0 +1,34 @@
+server {
+  listen 80;
+  return 301 https://$host$request_uri;
+}
+  
+server {
+  listen 443;
+  server_name <%= @fqdn%>;
+
+  access_log /var/log/nginx/jenkins-https.access.log;
+  error_log /var/log/nginx/jenkins-https.error.log;
+  
+  ssl on;
+  ssl_certificate <%=@certdir%>/<%=@crt %>;
+  ssl_certificate_key <%=@certdir%>/<%=@key%>;
+
+  ssl_session_timeout 5m;
+  
+  ssl_protocols SSLv3 TLSv1;
+  ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv3:+EXP;
+  ssl_prefer_server_ciphers on;
+  client_max_body_size 500M;
+  
+  location /jenkins {
+    proxy_redirect off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Ssl on;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_pass http://localhost:8081;
+    proxy_read_timeout 90;
+  }
+}

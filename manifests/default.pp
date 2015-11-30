@@ -1,5 +1,7 @@
 node default {
 
+  include jenkinssecurity::nginx
+
   class{'jenkins':
     install_java => false
   }
