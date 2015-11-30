@@ -1,7 +1,7 @@
 forge 'https://forgeapi.puppetlabs.com'
 
 mod 'puppetlabs/stdlib'
-
+mod 'attachmentgenie/ufw'
 mod 'puppetlabs/apt'
 
 mod 'mstrauss/editfile', 

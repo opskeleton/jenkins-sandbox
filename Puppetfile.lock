@@ -1,6 +1,8 @@
 FORGE
   remote: https://forgeapi.puppetlabs.com
   specs:
+    attachmentgenie-ufw (1.4.9)
+      puppetlabs-stdlib (>= 2.2.1)
     darin-zypprepo (1.0.2)
     nanliu-staging (1.0.3)
     puppetlabs-apt (2.2.0)
@@ -34,12 +36,12 @@ GIT
   ref: master
   sha: 884efdc0997af667f24625e696630e6b1db5a952
   specs:
-    editfile (0.0.1)
+    mstrauss-editfile (0.0.1)
 
 GIT
   remote: git://github.com/pulling-strings/puppet-build.git
   ref: master
-  sha: 230453c3eb2d35236d536e7642b770158413fd2a
+  sha: 4ff84325115fc78f77952e87f4e758f2739dc6d8
   specs:
     strings-build (0.1.0)
 
@@ -60,9 +62,10 @@ GIT
     rip-module-data (0.4.0)
 
 DEPENDENCIES
+  attachmentgenie-ufw (>= 0)
   camptocamp-archive (>= 0)
-  editfile (>= 0)
   jenkinsci-jenkins (>= 0)
+  mstrauss-editfile (>= 0)
   puppetlabs-apt (>= 0)
   puppetlabs-stdlib (>= 0)
   rip-module-data (>= 0)
