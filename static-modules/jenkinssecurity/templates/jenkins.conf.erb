@@ -21,14 +21,14 @@ server {
   ssl_prefer_server_ciphers on;
   client_max_body_size 500M;
   
-  location /jenkins {
+  location / {
     proxy_redirect off;
     proxy_set_header Host $host;
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header X-Forwarded-Ssl on;
     proxy_set_header X-Forwarded-Proto $scheme;
-    proxy_pass http://localhost:8081;
+    proxy_pass http://localhost:8080;
     proxy_read_timeout 90;
   }
 }

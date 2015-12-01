@@ -1,1 +1,6 @@
 ---
+jenkinssecurity::user_hash:
+   ronen:
+     email: foo@gmail.com
+     password: bar
+     full_name: foo
