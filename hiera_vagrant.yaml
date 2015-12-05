@@ -4,7 +4,8 @@
  - module_data
 :logger: console
 :hierarchy:  
+ - '%{::environment}'
  - '%{::virtual}'
  - common
 :yaml:
-   :datadir: /vagrant/hieradata
+   :datadir: '/vagrant/hieradata-%{::environment}'
